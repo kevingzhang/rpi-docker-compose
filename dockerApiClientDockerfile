@@ -1,0 +1,5 @@
+FROM arm32v7/rust
+WORKDIR /home
+RUN git clone https://github.com/kevingzhang/trust-engine.git
+WORDDIR /home/trust-engine/docker-api
+CMD cargo run --bin docker-client
