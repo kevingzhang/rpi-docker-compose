@@ -1,0 +1,18 @@
+version:'3'
+services:
+  docker-api-server:
+    build:
+      context:.
+      dockerfile: dockerApiServerDockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker/sock
+    networks:
+      - inside-node-bridge
+      - connect-host
+  docker-api-client:
+    build:
+      context:
+      dockerfile: dockerApiClientDockerfile
+    networks:
+      - inside-node-bridge
+  
